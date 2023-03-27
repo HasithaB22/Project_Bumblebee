@@ -1,10 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Hasitha Piyumal PC
-  Date: 3/10/2023
-  Time: 10:55 AM
-  To change this template use File | Settings | File Templates.
---%>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+<script src="https://kit.fontawesome.com/c6b5381962.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/c6b5381962.js" crossorigin="anonymous"></script>
+
 
 
 <style>
@@ -35,7 +35,7 @@
                      class="img-fluid" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form>
+                <form action="./signup" method="post">
                     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                         <p class="lead fw-normal mb-0 me-3">Sign in with</p>
                         <button type="button" class="btn btn-primary btn-floating mx-1">
@@ -57,16 +57,22 @@
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="form3Example3" class="form-control form-control-lg"
+                        <input type="email" name="username" id="usename" class="form-control form-control-lg"
+                               placeholder="Enter username" />
+                        <label class="form-label" for="usename">Username</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="email" name="email" id="email" class="form-control form-control-lg"
                                placeholder="Enter a valid email address" />
-                        <label class="form-label" for="form3Example3">Email address</label>
+                        <label class="form-label" for="email">Email address</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-3">
-                        <input type="password" id="form3Example4" class="form-control form-control-lg"
+                        <input type="password" name="password" id="password" class="form-control form-control-lg"
                                placeholder="Enter password" />
-                        <label class="form-label" for="form3Example4">Password</label>
+                        <label class="form-label" for="password">Password</label>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center">
@@ -81,7 +87,7 @@
                     </div>
 
                     <div class="text-center text-lg-start mt-4 pt-2">
-                        <button type="button" class="btn btn-primary btn-lg"
+                        <button type="submit" class="btn btn-primary btn-lg"
                                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
                         <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
                                                                                           class="link-danger">Register</a></p>

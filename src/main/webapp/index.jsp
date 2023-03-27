@@ -16,14 +16,18 @@
 
 
 
-<%--<%@include file="includes/navbar.jsp"%>--%>
-<%--<%@include file="includes/home.jsp"%>--%>
-<%--<%@include file="includes/productcarousel.jsp"%>--%>
-<%--<%@include file="includes/allproducts.jsp"%>--%>
-<%--<%@include file="includes/marqueecarousel.jsp"%>--%>
-<%--<%@include file="includes/footer.jsp"%>--%>
-<%@include file="includes/contact.jsp"%>
-<%--<%@include file="includes/login&signup.jsp"%>--%>
+
+<%@include file="includes/navbar.jsp"%>
+<% Connection conn= DBConnection.getConn();
+    out.print(conn);%>
+<%@include file="includes/home.jsp"%>
+<%@include file="includes/productcarousel.jsp"%>
+<%@include file="includes/allproducts.jsp"%>
+<%@include file="includes/marqueecarousel.jsp"%>
+<%@include file="includes/footer.jsp"%>
+<%--<%@include file="includes/contact.jsp"%>--%>
+<%@include file="includes/login.jsp"%>
+<%@include file="signup.jsp"%>
 
 </body>
 </html>
