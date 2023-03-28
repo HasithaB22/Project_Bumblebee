@@ -57,7 +57,7 @@
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" name="username" id="usename" class="form-control form-control-lg"
+                        <input type="text" name="username" id="usename" class="form-control form-control-lg"
                                placeholder="Enter username" />
                         <label class="form-label" for="usename">Username</label>
                     </div>
@@ -88,9 +88,9 @@
 
                     <div class="text-center text-lg-start mt-4 pt-2">
                         <button type="submit" class="btn btn-primary btn-lg"
-                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                        <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
-                                                                                          class="link-danger">Register</a></p>
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0">Do you have an account? <a href="login.jsp"
+                                                                                          class="link-danger">Login</a></p>
                     </div>
 
                 </form>

@@ -3,6 +3,30 @@
 <%--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>--%>
 <%--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--%>
 
+
+
+<style>
+    .avatar {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 12px;
+        line-height: 25px;
+        text-align: center;
+        margin-right: 10px;
+    }
+    .fonts {
+        font-size: 12px;
+        line-height: 25px;
+        align-items: center;
+        margin-top: 10px;
+    }
+</style>
+
+
 <body>
 
 
@@ -44,10 +68,14 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="includes/login.jsp"><i class="fa fa-user"></i></a>
+                    <a class="nav-link" href="./login.jsp"><i class="fa fa-user"></i></a>
+
                 </li>
 
+
             </ul>
+
+
 
             <i class="fa-solid fa-user"></i>
 
@@ -57,6 +85,7 @@
 
 
             <form class="d-flex">
+
                 <input class="form-control me-2" type="text" placeholder="Search">
                 <button class="btn btn-primary" type="button">Search</button>
             </form>

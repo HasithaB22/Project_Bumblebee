@@ -12,47 +12,88 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Base64;
 
 
 @WebServlet("/login")
 public class Login extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        // Retrieve user input
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
+        // Validate input
+        if (username == null || username.trim().equals("") ||
+                password == null || password.trim().equals("")) {
+            // Handle invalid input error
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid input data");
+            return;
+        }
+
+
         try {
             Connection conn = DBConnection.getConn();
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM customer WHERE username = ? AND password = ?");
-            pstmt.setString(1, username);
-            pstmt.setString(2, password);
-            ResultSet rs = pstmt.executeQuery();
 
-            if (rs.next()) {
-                HttpSession session = request.getSession();
-                session.setAttribute("username", username);
-                response.sendRedirect("./index.jsp");
-            } else {
-                response.setContentType("text/html");
-                PrintWriter out = response.getWriter();
-                out.println("<script type=\"text/javascript\">");
-                out.println("alert('Invalid username or password');");
-                out.println("window.location.href='Form/Login.jsp';");
-                out.println("</script>");
+            // Retrieve user data from database
+            PreparedStatement stmt = conn.prepareStatement(
+                    "SELECT password_salt, password FROM customer WHERE username = ?");
+            stmt.setString(1, username);
+            ResultSet result = stmt.executeQuery();
+            if (!result.next()) {
+                // Handle invalid username error
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid username or password");
+                return;
+            }
+            String encodedSalt = result.getString("password_salt");
+            String encodedPassword = result.getString("password");
+
+            // Decode salt and hashed password from base64 strings
+            byte[] salt = Base64.getDecoder().decode(encodedSalt);
+            byte[] hashedPassword = Base64.getDecoder().decode(encodedPassword);
+
+            // Hash password with retrieved salt
+            byte[] inputHashedPassword = null;
+            try {
+                MessageDigest digest = MessageDigest.getInstance("SHA-256");
+                digest.reset();
+                digest.update(salt);
+                inputHashedPassword = digest.digest(password.getBytes("UTF-8"));
+            } catch (Exception e) {
+                // Handle encryption error
+                response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Encryption error: " + e.getMessage());
+                return;
             }
 
-            conn.close();
+            // Check if hashed password matches retrieved hashed password
+            if (!MessageDigest.isEqual(hashedPassword, inputHashedPassword)) {
+                // Handle invalid password error
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid username or password");
+                return;
+            }
+
+            // User authenticated, store username in session
+            HttpSession session = request.getSession();
+            session.setAttribute("username", username);
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            response.sendRedirect("error.jsp");
+            // Handle database error
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Database error: " + e.getMessage());
+            return;
         }
-    }
 
+        // Redirect user to a success page
+        response.sendRedirect("success.jsp");
+    }
 }
+
+
+
