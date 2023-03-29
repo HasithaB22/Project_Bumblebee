@@ -96,7 +96,7 @@
 <%@include file="dashboard.jsp"%>
 <div class="container mt-5">
     <h1>Add Product Details</h1>
-    <form action="./AddProductServlet" method="POST" enctype="multipart/form-data" class="d-block">
+    <form action="../AddProductServlet" method="POST" enctype="multipart/form-data" class="d-block">
         <fieldset>
             <legend>Product Information</legend>
             <div class="mb-3">
