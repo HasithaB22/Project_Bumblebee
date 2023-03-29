@@ -92,11 +92,11 @@
 <%--    <input type="text" id="color" name="color"><br>--%>
 <%--    <input type="submit" value="Add Product">--%>
 <%--</form>--%>
-
-
+<div class="container-fluid d-flex">
+<%@include file="dashboard.jsp"%>
 <div class="container mt-5">
     <h1>Add Product Details</h1>
-    <form action="./AddProductServlet" method="POST" enctype="multipart/form-data">
+    <form action="./AddProductServlet" method="POST" enctype="multipart/form-data" class="d-block">
         <fieldset>
             <legend>Product Information</legend>
             <div class="mb-3">
@@ -136,6 +136,7 @@
             <input type="submit" value="Add Product" class="btn btn-primary">
         </div>
     </form>
+</div>
 </div>
 </body>
 </html>

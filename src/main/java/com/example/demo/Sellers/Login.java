@@ -91,7 +91,7 @@ public class Login extends HttpServlet {
         }
 
         // Redirect user to a success page
-        response.sendRedirect("success.jsp");
+        response.sendRedirect("seller");
     }
 }
 

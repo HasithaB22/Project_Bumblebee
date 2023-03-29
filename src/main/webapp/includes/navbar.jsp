@@ -52,7 +52,7 @@
                     <a class="nav-link" href="javascript:void(0)">Electronics</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)">Foods</a>
+                    <a class="nav-link" href="./seller/dashboard.jsp">Products</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>

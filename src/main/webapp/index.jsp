@@ -17,22 +17,22 @@
 
 
 
-<%--<%@include file="includes/navbar.jsp"%>--%>
-<%--<% Connection conn= DBConnection.getConn();--%>
-<%--    out.print(conn);%>--%>
+<%@include file="includes/navbar.jsp"%>
+<% Connection conn= DBConnection.getConn();
+    out.print(conn);%>
 
 
-<%--<%@include file="includes/home.jsp"%>--%>
-<%--<%@include file="includes/productcarousel.jsp"%>--%>
-<%--<%@include file="includes/allproducts.jsp"%>--%>
-<%--<%@include file="includes/marqueecarousel.jsp"%>--%>
-<%--<%@include file="includes/footer.jsp"%>--%>
-<%--&lt;%&ndash;<%@include file="includes/contact.jsp"%>&ndash;%&gt;--%>
-<%--<%@include file="login.jsp"%>--%>
-<%--<%@include file="signup.jsp"%>--%>
-<%--<%@include file="includes/dashboard.jsp"%>--%>
+<%@include file="includes/home.jsp"%>
+<%@include file="includes/productcarousel.jsp"%>
+<%@include file="includes/allproducts.jsp"%>
+<%@include file="includes/marqueecarousel.jsp"%>
+<%@include file="includes/footer.jsp"%>
+<%@include file="login.jsp"%>
+<%@include file="signup.jsp"%>
+<%@include file="seller/dashboard.jsp"%>
+<%--<%@include file="includes/contact.jsp"%>--%>
 <%--<%@include file="seller/productmanagingnavbar.jsp"%>--%>
-<%@include file="seller/addproduct.jsp"%>
+<%--<%@include file="seller/addproduct.jsp"%>--%>
 
 
 
