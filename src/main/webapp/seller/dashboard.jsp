@@ -35,7 +35,7 @@
                     <ul class="nav flex-column">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="home-view">
                                 <i class="fas fa-users"></i> Customers
                             </a>
                         </li>

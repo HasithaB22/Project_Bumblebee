@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -45,7 +44,7 @@ public class Login extends HttpServlet {
 
             // Retrieve user data from database
             PreparedStatement stmt = conn.prepareStatement(
-                    "SELECT password_salt, password FROM customer WHERE username = ?");
+                    "SELECT password_salt, password, email FROM customer WHERE username = ?");
             stmt.setString(1, username);
             ResultSet result = stmt.executeQuery();
             if (!result.next()) {
@@ -55,6 +54,7 @@ public class Login extends HttpServlet {
             }
             String encodedSalt = result.getString("password_salt");
             String encodedPassword = result.getString("password");
+            String userEmail = result.getString("email");
 
             // Decode salt and hashed password from base64 strings
             byte[] salt = Base64.getDecoder().decode(encodedSalt);
@@ -83,6 +83,7 @@ public class Login extends HttpServlet {
             // User authenticated, store username in session
             HttpSession session = request.getSession();
             session.setAttribute("username", username);
+            session.setAttribute("userEmail", userEmail);
 
         } catch (SQLException e) {
             // Handle database error
@@ -91,7 +92,7 @@ public class Login extends HttpServlet {
         }
 
         // Redirect user to a success page
-        response.sendRedirect("seller");
+        response.sendRedirect("index.jsp");
     }
 }
 

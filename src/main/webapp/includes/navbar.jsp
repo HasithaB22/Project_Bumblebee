@@ -96,7 +96,7 @@
     </div>
 
 
-
+    <h4 class="text-warning">welcome <%=session.getAttribute("userEmail")%></h4>
 
 
 
