@@ -52,15 +52,13 @@
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <!-- Content -->
-                        <h6 class="text-uppercase fw-bold">Company name</h6>
+                        <h6 class="text-uppercase fw-bold">Bumblebee</h6>
                         <hr
                                 class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #7c4dff; height: 2px"
                         />
                         <p>
-                            Here you can use rows and columns to organize your footer
-                            content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit.
+                            Buy now! Pay later .
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -74,16 +72,16 @@
                                 style="width: 60px; background-color: #7c4dff; height: 2px"
                         />
                         <p>
-                            <a href="#!" class="text-white">MDBootstrap</a>
+                            <a href="#!" class="text-white">Electronics</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">MDWordPress</a>
+                            <a href="#!" class="text-white">Beauty Care</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">BrandFlow</a>
+                            <a href="#!" class="text-white">Automotive</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Bootstrap Angular</a>
+                            <a href="#!" class="text-white">Agriculture</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -119,10 +117,10 @@
                                 class="mb-4 mt-0 d-inline-block mx-auto"
                                 style="width: 60px; background-color: #7c4dff; height: 2px"
                         />
-                        <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                        <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                        <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                        <p><i class="fas fa-home mr-3"></i> Colombo, 10012, Sri Lanka</p>
+                        <p><i class="fas fa-envelope mr-3"></i> info@bumblebee.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 94 133 133 55</p>
+                        <p><i class="fas fa-print mr-3"></i> + 94 133 133 56</p>
                     </div>
                     <!-- Grid column -->
                 </div>
@@ -136,9 +134,9 @@
                 class="text-center p-3"
                 style="background-color: rgba(0, 0, 0, 0.2)"
         >
-            © 2020 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/"
-            >MDBootstrap.com</a
+             2023 Copyright:
+            <a class="text-white" href="#"
+            >Bumblebee.com</a
             >
         </div>
         <!-- Copyright -->
